@@ -1,25 +1,27 @@
-import logo from './logo.svg';
+import React from 'react';
+import { Route, Link, Redirect} from 'react-router-dom';
 import './App.css';
+import Highlight from '../Highlight/Highlight';
+import Nav from '../Nav/Nav';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <main className="App">
+        <header>
+          <h1>welcome to the flock</h1>
+        </header>
+        <Highlight />
+        <Nav />
+      </main>
   );
 }
+
+//will use link to go to other components
+//redirect will be used for Error
+//when does the home route belong?
+//use Switch?
+
+//Error handling & react Hooks
+//Loading & react Hooks
 
 export default App;

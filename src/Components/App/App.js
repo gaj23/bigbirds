@@ -1,16 +1,17 @@
 import React from 'react';
 import { Route, Link, Redirect} from 'react-router-dom';
 import './App.css';
+import Header from '../Header/Header'
 import Highlight from '../Highlight/Highlight';
 import Nav from '../Nav/Nav';
+
 
 const App = () => {
   return (
       <main className="App">
-        <header>
-          <h1>welcome to the flock</h1>
-        </header>
+        <Header />
         <Highlight />
+        {/*if route = home then render highlight, if */}
         <Nav />
       </main>
   );

@@ -4,7 +4,12 @@ import './Nav.css';
 
 const Nav = () => {
   return (
-    <h3>Nav bar</h3>
+    <nav>
+      <button>Home</button>
+      <button>Top 100</button>
+      <button>Sightings</button>
+      <button>About</button>
+    </nav>
   )
 }
 

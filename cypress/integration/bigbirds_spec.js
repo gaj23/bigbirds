@@ -21,7 +21,8 @@ describe('BigBirds', () => {
     })
 
     it('Should have a clickable navigation bar', () => {
-
+      cy.get('main nav').should('be.visible')
+        .get('button').click({ multiple:true })
     })
   })
 })

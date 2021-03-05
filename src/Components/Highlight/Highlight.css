@@ -3,6 +3,7 @@
 .highlight {
   position: relative;
   top: 6em;
+  bottom: 10em;
   display: flex;
   flex-direction: column;
   align-items: center;

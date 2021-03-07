@@ -3,16 +3,15 @@ import './TopList.css';
 import Nav from '../Nav/Nav';
 import Header from '../Header/Header';
 import Bird from '../Bird/Bird';
+import apiCalls from '../../apiCalls'
 
 const TopList = () => {
   const [areaBirds, setAreaBirds] = useState([])
 
   useEffect(() => {
-      fetch('https://api.ebird.org/v2/data/obs/US-CO/recent?back=2&maxResults=50&key=jcsp15jhp6hi')
-        .then(response => response.json())
+      apiCalls.getTopBirds()
         .then(data => setAreaBirds(data))
         .catch(error => console.log(error))
-      console.log(areaBirds)
     }, [])
 
   console.log(areaBirds)

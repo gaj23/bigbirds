@@ -31,7 +31,6 @@ const Highlight = () => {
           <h4><em>{birdOfTheDay.sciName}</em></h4>
           <a href={moreInfo()} target='_blank' rel='noreferrer'><h5>Learn more here!</h5></a>
         </article>
-      {/* What do I want to be rendered here compared to what will be rendered in Details? */}
     </section>
   )
 }

@@ -9,10 +9,10 @@ const Highlight = () => {
     sciName: 'Certhia americana',
     url: 'https://www.allaboutbirds.org/guide/assets/photo/68037181-1280px.jpg'
   }
-  //pass down a randomly chosen bird from the top 100 list compared to what exists on the personallist
-  //create a object that has both gathered data and person data of being true or false
-  //map over data to add property
-  //url is not included, that will need to be data I compile myself.
+  //compare sightings list with top 30 list & filter is !dateSeen
+  //randomize !seen birds
+  //will need to account to ! url (see details for logic)
+  //or completely refactor this -> get it working first and then refactor.
 
   const moreInfo = () => {
     let bird;

@@ -2,6 +2,8 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import './Details.css';
 import images from '../../data/imagesData';
+import Nav from '../Nav/Nav';
+import Header from '../Header/Header';
 
 
 const Details = () => {
@@ -16,8 +18,6 @@ const Details = () => {
     }
   }
 
-  // images[speciesCode]
-
   const moreInfo = () => {
     let bird;
     if(comName.includes(' ')) {
@@ -27,12 +27,17 @@ const Details = () => {
   }
 
   return (
-    <article>
-      <img src={birdImage()} alt={comName}/>
-      <h3>{comName}</h3>
-      <h4><em>{sciName}</em></h4>
-      <a href={moreInfo()} target='_blank' rel='noreferrer'><h5>Learn more here!</h5></a>
-    </article>
+    <section className='bird-details'>
+      <Header />
+      <h2>About the {comName}</h2>
+      <article>
+        <img src={birdImage()} alt={comName}/>
+        <h3>{comName}</h3>
+        <h4><em>{sciName}</em></h4>
+        <a href={moreInfo()} target='_blank' rel='noreferrer'><h5>Learn more here!</h5></a>
+      </article>
+      <Nav />
+    </section>
   )
 }
 

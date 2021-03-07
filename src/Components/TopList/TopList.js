@@ -19,8 +19,7 @@ const TopList = () => {
   const possibleBirds = areaBirds.map(bird => {
     return <Bird
         key={bird.speciesCode}
-        id={bird.speciseCode}
-        comName={bird.comName}
+        bird={bird}
       />
   })
 

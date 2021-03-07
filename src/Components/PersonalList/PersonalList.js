@@ -6,10 +6,7 @@ import sightings from '../../data/sightingsData';
 import Sighting from '../Sighting/Sighting';
 
 const PersonalList = () => {
-  console.log(new Date());
-  //match sighting data to new date data
-  console.log(sightings);
-
+  
   const seenBirds = sightings.map(bird => {
     return <Sighting
         key={bird.speciesCode}

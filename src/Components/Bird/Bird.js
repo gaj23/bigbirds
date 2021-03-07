@@ -3,14 +3,20 @@ import { Link } from 'react-router-dom';
 import './Bird.css';
 import arrow from '../../Assets/go-to.png';
 
-const Bird = ( { id, comName } ) => {
+const Bird = ( { bird } ) => {
+  const {speciesCode, comName} = bird
   return (
     <tr>
       <td>
-        <input type='checkbox' name={id}/>
-        <label htmlFor={id}>{comName}</label>
-        <Link to='/bird-details/{id}'>
-          <img src={arrow} alt='go to {comName} details' />
+        <input type='checkbox' name={speciesCode}/>
+        <label htmlFor={speciesCode}>{comName}</label>
+        <Link to={
+          {
+            pathname: `/bird_details/${speciesCode}`,
+            state: bird
+          }
+        } >
+          <img src={arrow} alt={`go to ${comName} details`} />
         </Link>
       </td>
     </tr>

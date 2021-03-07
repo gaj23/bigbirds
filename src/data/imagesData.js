@@ -1,9 +1,9 @@
-const images = () => {
+const images = {
   grhowl: 'https://www.allaboutbirds.org/guide/assets/photo/63741611-1280px.jpg',
   nopowl: 'https://www.allaboutbirds.org/guide/assets/photo/66047081-1280px.jpg',
   sheowl: 'https://www.allaboutbirds.org/guide/assets/photo/37180721-1280px.jpg',
   rewbla: 'https://www.allaboutbirds.org/guide/assets/photo/63744251-1280px.jpg',
-  norhar: 'https://www.allaboutbirds.org/guide/assets/photo/70774731-1280px.jpg',
+  'norhar2': 'https://www.allaboutbirds.org/guide/assets/photo/70774731-1280px.jpg',
   wesmea: 'https://www.allaboutbirds.org/guide/assets/photo/67378741-1280px.jpg',
   baleag: 'https://www.allaboutbirds.org/guide/assets/photo/60328971-1280px.jpg',
   cangoo: 'https://www.allaboutbirds.org/guide/assets/photo/59953191-1280px.jpg',
@@ -20,8 +20,8 @@ const images = () => {
   redhea: 'https://www.allaboutbirds.org/guide/assets/photo/63894341-1280px.jpg',
   amewig: 'https://www.allaboutbirds.org/guide/assets/photo/60017891-1280px.jpg',
   comgol: 'https://www.allaboutbirds.org/guide/assets/photo/63907721-1280px.jpg',
-  grbher: 'https://www.allaboutbirds.org/guide/assets/photo/60314201-1280px.jpg',
-  wilsni: 'https://www.allaboutbirds.org/guide/assets/photo/64829071-1280px.jpg',
+  'grbher3': 'https://www.allaboutbirds.org/guide/assets/photo/60314201-1280px.jpg',
+  'wilsni1': 'https://www.allaboutbirds.org/guide/assets/photo/64829071-1280px.jpg',
   daejun: 'https://www.allaboutbirds.org/guide/assets/photo/66115711-1280px.jpg',
   norgos: 'https://www.allaboutbirds.org/guide/assets/photo/39233471-1280px.jpg',
   killde: 'https://www.allaboutbirds.org/guide/assets/photo/64809651-1280px.jpg',
@@ -29,7 +29,7 @@ const images = () => {
   amerob: 'https://www.allaboutbirds.org/guide/assets/photo/60412911-1280px.jpg',
   moudov: 'https://www.allaboutbirds.org/guide/assets/photo/60386921-1280px.jpg',
   amecro: 'https://www.allaboutbirds.org/guide/assets/photo/59858041-1280px.jpg',
-  cacgoo: 'https://www.allaboutbirds.org/guide/assets/photo/59950661-1280px.jpg',
+  'cacgoo1': 'https://www.allaboutbirds.org/guide/assets/photo/59950661-1280px.jpg',
   norsho: 'https://www.allaboutbirds.org/guide/assets/photo/60312481-1280px.jpg',
   buffle: 'https://www.allaboutbirds.org/guide/assets/photo/216531741-1280px.jpg',
   rocpig: 'https://www.allaboutbirds.org/guide/assets/photo/66031271-1280px.jpg',
@@ -48,5 +48,7 @@ const images = () => {
   cedwax: 'https://www.allaboutbirds.org/guide/assets/photo/59874471-1280px.jpg',
   lesgol: 'https://www.allaboutbirds.org/guide/assets/photo/67272491-1280px.jpg',
   horgre: 'https://www.allaboutbirds.org/guide/assets/photo/65055691-1280px.jpg',
-  mallar: 'https://www.allaboutbirds.org/guide/assets/photo/60021841-1280px.jpg'
+  'mallar3': 'https://www.allaboutbirds.org/guide/assets/photo/60021841-1280px.jpg'
 }
+
+export default images;

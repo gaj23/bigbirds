@@ -7,7 +7,6 @@ const Sighting = ( { bird } ) => {
   const { speciesCode, comName, dateSeen } = bird
   return (
     <tr>
-      <td>{ dateSeen }</td>
       <td>
         { comName }
         <Link to={

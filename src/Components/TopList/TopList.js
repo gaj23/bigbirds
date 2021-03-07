@@ -8,13 +8,13 @@ import apiCalls from '../../apiCalls'
 const TopList = () => {
   const [areaBirds, setAreaBirds] = useState([])
 
+  const [yourBird, setYourBirds] = useState([])
+
   useEffect(() => {
       apiCalls.getTopBirds()
         .then(data => setAreaBirds(data))
         .catch(error => console.log(error))
     }, [])
-
-  console.log(areaBirds)
 
   const possibleBirds = areaBirds.map(bird => {
     return <Bird

@@ -5,10 +5,27 @@ import arrow from '../../Assets/go-to.png';
 
 const Bird = ( { bird } ) => {
   const {speciesCode, comName} = bird
+  let checked;
+
+  const handleChange = (event) => {
+    checkBox();
+    const findBird =
+    console.log(event.target.name)
+  }
+
+  const checkBox = () => {
+    checked = checked ? false : true
+  }
+
   return (
     <tr>
       <td>
-        <input type='checkbox' name={speciesCode}/>
+        <input
+          type='checkbox'
+          name={speciesCode}
+          checked={checked}
+          onClick={handleChange}
+        />
         <label htmlFor={speciesCode}>{comName}</label>
         <Link to={
           {

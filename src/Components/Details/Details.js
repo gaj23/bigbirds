@@ -1,11 +1,14 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import './Details.css';
 
+
 const Details = () => {
-  //grab the id? 
+  const location = useLocation();
+  const { speciesCode, comName, sciName } = location.state
   return (
     <section>
-      <p>About the bird</p>
+      <p>About the {comName}</p>
     </section>
   )
 }

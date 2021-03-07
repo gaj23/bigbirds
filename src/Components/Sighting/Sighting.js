@@ -5,15 +5,17 @@ import arrow from '../../Assets/go-to.png';
 
 const Sighting = ( { bird } ) => {
   const { speciesCode, comName, dateSeen } = bird
-
-  console.log(bird.speciesCode)
-  //expecting an object
   return (
     <tr>
       <td>{ dateSeen }</td>
       <td>
         { comName }
-        <Link to={`/bird_details/${speciesCode}`} >
+        <Link to={
+          {
+            pathname: `/bird_details/${speciesCode}`,
+            state: bird
+          }
+        } >
           <img src={arrow} alt={`go to ${comName} details`} />
         </Link>
       </td>

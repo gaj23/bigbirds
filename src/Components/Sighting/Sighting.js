@@ -3,14 +3,17 @@ import { Link } from 'react-router-dom';
 import './Sighting.css';
 import arrow from '../../Assets/go-to.png';
 
-const Sighting = ( { id, comName, date } ) => {
-  console.log('id in sighting', id);
+const Sighting = ( { bird } ) => {
+  const { speciesCode, comName, dateSeen } = bird
+
+  console.log(bird.speciesCode)
+  //expecting an object
   return (
     <tr>
-      <td>{ date }</td>
+      <td>{ dateSeen }</td>
       <td>
         { comName }
-        <Link to={`/bird_details/${id}`}>
+        <Link to={`/bird_details/${speciesCode}`} >
           <img src={arrow} alt={`go to ${comName} details`} />
         </Link>
       </td>

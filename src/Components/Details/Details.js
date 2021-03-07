@@ -1,8 +1,8 @@
 import React from 'react';
 import './Details.css';
 
-const Details = ({ bird }) => {
-  console.log('inside details', bird)
+const Details = () => {
+  //grab the id? 
   return (
     <section>
       <p>About the bird</p>

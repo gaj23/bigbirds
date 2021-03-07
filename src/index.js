@@ -11,13 +11,14 @@ ReactDOM.render(
   <BrowserRouter>
     <Switch>
       <Route path='/home' component={ App } />
-      <Route path='/top50' component={ TopList } />
+      <Route path='/top_30' component={ TopList } />
       <Route path='/bird_details/:id'
       render={({ match }) => {
         console.log('inside route', match)
               return (
                 <Details
-                  id={match.params.id} />
+                  id={match.params.id}
+                />
                 );
               }}  />
       <Route path='/seen' component= { PersonalList } />

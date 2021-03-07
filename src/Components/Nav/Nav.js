@@ -8,8 +8,8 @@ const Nav = () => {
       <Link to='/home'>
         <button>Home</button>
       </Link>
-      <Link to='/top50'>
-        <button>Top 50</button>
+      <Link to='/top_30'>
+        <button>Top 30</button>
       </Link>
       <Link to='/seen'>
         <button>Seen</button>

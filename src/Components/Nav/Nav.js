@@ -11,7 +11,9 @@ const Nav = () => {
       <Link to='/top50'>
         <button>Top 50</button>
       </Link>
-      <button>Seen</button>
+      <Link to='/seen'>
+        <button>Seen</button>
+      </Link>
       <button>About</button>
     </nav>
   )

@@ -1,10 +1,10 @@
 import React from 'react';
 import './Details.css';
 
-const Details = ({ bird }) => {
+const Details = () => {
   return (
     <section>
-      <p>About { bird } </p>
+      <p>About the bird</p>
     </section>
   )
 }

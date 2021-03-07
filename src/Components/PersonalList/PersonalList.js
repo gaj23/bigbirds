@@ -13,7 +13,7 @@ const PersonalList = () => {
   const seenBirds = sightings.map(bird => {
     return <Sighting
         key={bird.speciesCode}
-        id={bird.speciseCode}
+        id={bird.speciesCode}
         comName={bird.comName}
         date={bird.dateSeen}
       />

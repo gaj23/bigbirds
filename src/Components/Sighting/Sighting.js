@@ -4,13 +4,14 @@ import './Sighting.css';
 import arrow from '../../Assets/go-to.png';
 
 const Sighting = ( { id, comName, date } ) => {
+  console.log('id in sighting', id);
   return (
     <tr>
       <td>{ date }</td>
       <td>
         { comName }
-        <Link to='/bird-details/{id}'>
-          <img src={arrow} alt='go to {comName} details' />
+        <Link to={`/bird_details/${id}`}>
+          <img src={arrow} alt={`go to ${comName} details`} />
         </Link>
       </td>
     </tr>

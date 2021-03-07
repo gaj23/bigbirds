@@ -11,7 +11,7 @@ const TopList = () => {
       fetch('https://api.ebird.org/v2/data/obs/US-CO/recent?back=2&maxResults=50&key=jcsp15jhp6hi')
         .then(response => response.json())
         .then(data => setAreaBirds(data))
-
+        .catch(error => console.log(error))
       console.log(areaBirds)
     }, [])
 
@@ -32,7 +32,7 @@ const TopList = () => {
       <table>
         <thead>
           <tr>
-              <th colspan="2">Seen it? Check it off!</th>
+              <th colSpan="2">Seen it? Check it off!</th>
           </tr>
         </thead>
         <tbody>

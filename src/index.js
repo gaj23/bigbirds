@@ -4,12 +4,14 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './index.css';
 import App from './Components/App/App';
 import TopList from './Components/TopList/TopList';
+import Details from './Components/Details/Details';
 
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
       <Route path='/home' component={ App } />
       <Route path='/top50' component={ TopList } />
+      <Route path='/bird-details/:id' component={ Details } />
     </Switch>
   </BrowserRouter>,
   document.getElementById('root')

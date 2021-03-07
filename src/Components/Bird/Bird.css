@@ -1,1 +1,17 @@
+td {
+  display: flex;
+  align-items: center;
+}
 
+input[type='checkbox'] {
+  margin: .8em;
+}
+
+input[type="checkbox"]:checked + label {
+  text-decoration: line-through;
+}
+
+img {
+  margin-left: .8em;
+  width: 2em;
+}

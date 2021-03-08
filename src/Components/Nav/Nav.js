@@ -5,9 +5,15 @@ import './Nav.css';
 const Nav = () => {
   return (
     <nav>
-      <button>Home</button>
-      <button>Top 100</button>
-      <button>Sightings</button>
+      <Link to='/home'>
+        <button>Home</button>
+      </Link>
+      <Link to='/top_30'>
+        <button>Top 30</button>
+      </Link>
+      <Link to='/seen'>
+        <button>Seen</button>
+      </Link>
       <button>About</button>
     </nav>
   )

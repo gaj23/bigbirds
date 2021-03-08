@@ -9,13 +9,3 @@ main {
   font-family: 'Nunito-sans', sans-serif;
   font-weight: 700;
 }
-
-header {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  text-align: center;
-  background: #162719;
-  color: #F3F2F7;
-}

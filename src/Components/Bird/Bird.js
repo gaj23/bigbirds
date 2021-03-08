@@ -12,7 +12,7 @@ const Bird = ( { bird, checkList, checked } ) => {
         <input
           type='checkbox'
           name={speciesCode}
-          checked={checked}
+          defaultChecked={checked}
           onChange={checkList}
         />
         <label htmlFor={speciesCode}>{comName}</label>

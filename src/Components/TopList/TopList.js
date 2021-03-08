@@ -57,7 +57,7 @@ const TopList = () => {
 
   const possibleBirds = () => {
     return areaBirds.map(bird => {
-    let checked;
+    let checked = null
     if(sightings.find(myBird => bird.speciesCode === myBird.speciesCode)) {
       checked = true;
     }

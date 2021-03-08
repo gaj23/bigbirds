@@ -7,28 +7,15 @@ import Bird from '../Bird/Bird';
 const TopList = () => {
   const topBirds = localStorage.getItem('topBirds');
   const [areaBirds, setAreaBirds] = useState(JSON.parse(topBirds));
-  console.log('total birds possible to be seen', areaBirds)
 
-  const stringedSightings = localStorage.getItem('storedSightings')
+  const stringedSightings = localStorage.getItem('storedSightings');
   const [sightings, setSightings] = useState(JSON.parse(stringedSightings));
 
-  // const [checked, setChecked] = useState(false);
-//useEffect, onload, do the following?
   useEffect(() => {
-    const checkList = () => {
-      console.log('firing?')
-      areaBirds.forEach(bird => {
-        sightings.forEach(myBird => {
-          if(myBird.speciesCode === bird.speciesCode) {
-            console.log('blah')
-          }
-        })
-      })
-    }
+    console.log('CHANGEHASHAPPENED')
+
+    //when sightings changes, we need to reevaluate <Bird /> or aka possibleBirds
   }, [sightings])
-  //every time sightings changes, this event should fire
-  //sightings should change with each click
-  //if areaBird is in sightings, then checked is true
 
   const checkList = (event) => {
     if(!sightings.find(bird=> bird.speciesCode === event.target.name)) {
@@ -50,12 +37,14 @@ const TopList = () => {
     }
 
     sightings.push(addSighting)
+    setSightings(sightings);
     localStorage.setItem('storedSightings', JSON.stringify(sightings))
   }
 
   const removeFromList = (event) => {
     const updatedList = sightings.filter(bird => bird.speciesCode !== event.target.name)
 
+    setSightings(updatedList);
     localStorage.setItem('storedSightings', JSON.stringify(updatedList))
   }
 
@@ -66,13 +55,22 @@ const TopList = () => {
     return `${year}-${month}-${day}`
   }
 
-  const possibleBirds = areaBirds.map(bird => {
+  const possibleBirds = () => {
+    return areaBirds.map(bird => {
+    let checked;
+    if(sightings.find(myBird => bird.speciesCode === myBird.speciesCode)) {
+      checked = true;
+    } else {
+      checked = false;
+    }
     return <Bird
         key={bird.speciesCode}
         bird={bird}
+        checked={checked}
         checkList={checkList}
-      />
-  })
+       />
+   })
+  }
 
   return (
     <section className='topList'>
@@ -86,7 +84,7 @@ const TopList = () => {
               </tr>
             </thead>
             <tbody>
-              {possibleBirds}
+              {possibleBirds()}
             </tbody>
           </table>
         </article>

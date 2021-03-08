@@ -5,12 +5,7 @@ import Header from '../Header/Header';
 import Sighting from '../Sighting/Sighting';
 
 const PersonalList = () => {
-  //get items from local storage and use *that* instead of calling on local data
-  //refactor this into JSON update file only
-  let personalSightings = localStorage.getItem('storedSightings');
-  personalSightings = JSON.parse(personalSightings);
-
-  //only 'gets' and doesn't update.
+  const personalSightings = JSON.parse(localStorage.getItem('storedSightings'));
 
   const seenBirds = personalSightings.map(bird => {
     return <Sighting
@@ -22,7 +17,7 @@ const PersonalList = () => {
   return (
     <section className='sightingsList'>
       <Header />
-      <h2>Birds you've Identified</h2>
+      <h2>You've Identified {seenBirds.length} Birds</h2>
       <table>
         <tbody>
           {seenBirds}

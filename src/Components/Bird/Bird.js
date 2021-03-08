@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './Bird.css';
 import arrow from '../../Assets/go-to.png';
 
-const Bird = ( { bird, updateList, checkList } ) => {
+const Bird = ( { bird, updateList } ) => {
   const {speciesCode, comName} = bird
 
   return (
@@ -12,7 +12,7 @@ const Bird = ( { bird, updateList, checkList } ) => {
         <input
           type='checkbox'
           name={speciesCode}
-          onChange={updateList}
+          onClick={updateList}
         />
         <label htmlFor={speciesCode}>{comName}</label>
         <Link to={

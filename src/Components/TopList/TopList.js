@@ -1,44 +1,52 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './TopList.css';
 import Nav from '../Nav/Nav';
 import Header from '../Header/Header';
 import Bird from '../Bird/Bird';
 
 const TopList = () => {
-  const topBirds = localStorage.getItem('topBirds')
-  const areaBirds = JSON.parse(topBirds)
+  const topBirds = localStorage.getItem('topBirds');
+  const [areaBirds, setAreaBirds] = useState(JSON.parse(topBirds));
+  console.log('total birds possible to be seen', areaBirds)
 
+  const stringedSightings = localStorage.getItem('storedSightings')
+  const [sightings, setSightings] = useState(JSON.parse(stringedSightings));
+
+  // const [checked, setChecked] = useState(false);
+//useEffect, onload, do the following?
+  useEffect(() => {
     const checkList = () => {
-      const stringedSightings = localStorage.getItem('storedSightings')
-      let sightings = JSON.parse(stringedSightings);
-
+      console.log('firing?')
       areaBirds.forEach(bird => {
-        sightings.find(myBird => {
-          if(myBird.speciesCode === bird.speciesCode) {            return 'checked'
-        } else {
-          console.log('false')
-        }
-      })
+        sightings.forEach(myBird => {
+          if(myBird.speciesCode === bird.speciesCode) {
+            console.log('blah')
+          }
+        })
       })
     }
-
-
-
-    //if bird is in seen birds, then checked is true
+  }, [sightings])
+  //every time sightings changes, this event should fire
+  //sightings should change with each click
+  //if areaBird is in sightings, then checked is true
 
   const updateList = (event) => {
     if (event.target.checked){
-      addToList(event)
+      checkList(event)
     } else if (!event.target.checked) {
       removeFromList(event)
     }
   }
 
-  const addToList = (event) => {
-    const stringedSightings = localStorage.getItem('storedSightings')
-    let sightings = JSON.parse(stringedSightings);
+  const checkList = (event) => {
+    if(!sightings.find(bird=> bird.speciesCode === event.target.name)) {
+      addToList(event)
+    }
+  }
 
+  const addToList = (event) => {
     const findBird = areaBirds.find(bird => bird.speciesCode === event.target.name);
+
     const date = new Date()
     const addSighting = {
       dateSeen: formatDate(date),
@@ -52,10 +60,6 @@ const TopList = () => {
   }
 
   const removeFromList = (event) => {
-    const stringedSightings = localStorage.getItem('storedSightings')
-    let sightings = JSON.parse(stringedSightings);
-    //refactor above into own json helper function
-
     sightings = sightings.filter(bird => bird.speciesCode !== event.target.name)
 
     localStorage.setItem('storedSightings', JSON.stringify(sightings))
@@ -73,7 +77,6 @@ const TopList = () => {
         key={bird.speciesCode}
         bird={bird}
         updateList={updateList}
-        isChecked={checkList}
       />
   })
 

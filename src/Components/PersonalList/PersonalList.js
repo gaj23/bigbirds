@@ -2,12 +2,17 @@ import React from 'react';
 import './PersonalList.css';
 import Nav from '../Nav/Nav';
 import Header from '../Header/Header';
-import sightings from '../../data/sightingsData';
 import Sighting from '../Sighting/Sighting';
 
 const PersonalList = () => {
-  
-  const seenBirds = sightings.map(bird => {
+  //get items from local storage and use *that* instead of calling on local data
+  //refactor this into JSON update file only
+  let personalSightings = localStorage.getItem('storedSightingings');
+  personalSightings = JSON.parse(personalSightings);
+
+  //only 'gets' and doesn't update.
+
+  const seenBirds = personalSightings.map(bird => {
     return <Sighting
         key={bird.speciesCode}
         bird={bird}

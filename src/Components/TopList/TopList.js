@@ -8,33 +8,9 @@ import Bird from '../Bird/Bird';
 import Loading from '../Loading/Loading';
 
 const TopList = () => {
-  const [areaBirds, setAreaBirds] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
+  const topBirds = localStorage.getItem('topBirds')
+  const areaBirds = JSON.parse(topBirds)
 
-  useEffect(() => {
-      apiCalls.getTopBirds()
-        .then(response => checkForError(response))
-        .then(data => setState(data))
-        .catch(error => {
-          setError(true)
-          setLoading(false)
-        })
-    }, [])
-
-  const checkForError = (response) => {
-    if(!response.ok) {
-      setLoading(false);
-      setError(true);
-    } else {
-      return response.json()
-    }
-  }
-
-  const setState = (data) => {
-    setAreaBirds(data);
-    setLoading(false);
-   }
 
   const possibleBirds = areaBirds.map(bird => {
     return <Bird
@@ -46,9 +22,6 @@ const TopList = () => {
   return (
     <section className='topList'>
       <Header />
-      {error && <Redirect to='/error' />}
-      {loading && !error && <Loading />}
-      {!loading && !error &&
         <article>
           <h2>Birds in your Area</h2>
           <table>
@@ -62,7 +35,6 @@ const TopList = () => {
             </tbody>
           </table>
         </article>
-      }
       <Nav />
     </section>
   )

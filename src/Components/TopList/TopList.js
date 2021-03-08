@@ -1,27 +1,30 @@
-import React, { useState, useEffect } from 'react';
-import { Redirect } from 'react-router-dom';
+import React from 'react';
 import './TopList.css';
 import Nav from '../Nav/Nav';
 import Header from '../Header/Header';
 import Bird from '../Bird/Bird';
-import Loading from '../Loading/Loading';
 
 const TopList = () => {
   const topBirds = localStorage.getItem('topBirds')
   const areaBirds = JSON.parse(topBirds)
 
-  const checkList = () => {
-    const stringedSightings = localStorage.getItem('storedSightings')
-    let sightings = JSON.parse(stringedSightings);
+    const checkList = () => {
+      const stringedSightings = localStorage.getItem('storedSightings')
+      let sightings = JSON.parse(stringedSightings);
 
-    // if areaBirds includes seenBirds, then checked = true
-
-    areaBirds.forEach(bird => {
-      sightings.find(seenBird => {
-
+      areaBirds.forEach(bird => {
+        sightings.find(myBird => {
+          if(myBird.speciesCode === bird.speciesCode) {            return 'checked'
+        } else {
+          console.log('false')
+        }
       })
-    })
-  }
+      })
+    }
+
+
+
+    //if bird is in seen birds, then checked is true
 
   const updateList = (event) => {
     if (event.target.checked){
@@ -30,9 +33,11 @@ const TopList = () => {
       removeFromList(event)
     }
   }
+
   const addToList = (event) => {
     const stringedSightings = localStorage.getItem('storedSightings')
     let sightings = JSON.parse(stringedSightings);
+
     const findBird = areaBirds.find(bird => bird.speciesCode === event.target.name);
     const date = new Date()
     const addSighting = {
@@ -41,6 +46,7 @@ const TopList = () => {
       comName: findBird.comName,
       sciName: findBird.sciName
     }
+
     sightings.push(addSighting)
     localStorage.setItem('storedSightings', JSON.stringify(sightings))
   }
@@ -49,9 +55,9 @@ const TopList = () => {
     const stringedSightings = localStorage.getItem('storedSightings')
     let sightings = JSON.parse(stringedSightings);
     //refactor above into own json helper function
-    console.log('before', sightings)
+
     sightings = sightings.filter(bird => bird.speciesCode !== event.target.name)
-    console.log('after', sightings)
+
     localStorage.setItem('storedSightings', JSON.stringify(sightings))
   }
 
@@ -62,15 +68,12 @@ const TopList = () => {
     return `${year}-${month}-${day}`
   }
 
-  //date needs formatted
-
-  //if inside of sightings, needs to already been set to true
-
   const possibleBirds = areaBirds.map(bird => {
     return <Bird
         key={bird.speciesCode}
         bird={bird}
         updateList={updateList}
+        isChecked={checkList}
       />
   })
 

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './Bird.css';
 import arrow from '../../Assets/go-to.png';
 
-const Bird = ( { bird, updateList } ) => {
+const Bird = ( { bird, updateList, checkList } ) => {
   const {speciesCode, comName} = bird
 
   return (
@@ -27,7 +27,5 @@ const Bird = ( { bird, updateList } ) => {
     </tr>
   )
 }
-
-//add link here to go to details about a bird.
 
 export default Bird;

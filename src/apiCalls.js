@@ -4,8 +4,4 @@ const apiCalls = {
   }
 }
 
-const getData = (url) => {
-  return fetch(url)
-}
-
 export default apiCalls;

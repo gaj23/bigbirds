@@ -1,21 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './TopList.css';
 import Nav from '../Nav/Nav';
 import Header from '../Header/Header';
 import Bird from '../Bird/Bird';
 
 const TopList = () => {
-  const topBirds = localStorage.getItem('topBirds');
-  const [areaBirds, setAreaBirds] = useState(JSON.parse(topBirds));
+  const areaBirds = JSON.parse(localStorage.getItem('topBirds'));
 
-  const stringedSightings = localStorage.getItem('storedSightings');
-  const [sightings, setSightings] = useState(JSON.parse(stringedSightings));
-
-  useEffect(() => {
-    console.log('CHANGEHASHAPPENED')
-
-    //when sightings changes, we need to reevaluate <Bird /> or aka possibleBirds
-  }, [sightings])
+  const [sightings, setSightings] = useState(JSON.parse(localStorage.getItem('storedSightings')));
 
   const checkList = (event) => {
     if(!sightings.find(bird=> bird.speciesCode === event.target.name)) {
@@ -57,7 +49,7 @@ const TopList = () => {
 
   const possibleBirds = () => {
     return areaBirds.map(bird => {
-    let checked = null
+    let checked = null;
     if(sightings.find(myBird => bird.speciesCode === myBird.speciesCode)) {
       checked = true;
     }

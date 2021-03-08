@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Redirect } from 'react-router-dom';
 import './TopList.css';
 import apiCalls from '../../apiCalls';
 import Nav from '../Nav/Nav';
@@ -8,14 +9,27 @@ import Loading from '../Loading/Loading';
 
 const TopList = () => {
   const [areaBirds, setAreaBirds] = useState([]);
-
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
       apiCalls.getTopBirds()
+        .then(response => checkForError(response))
         .then(data => setState(data))
-        .catch(error => console.log(error))
+        .catch(error => {
+          setError(true)
+          setLoading(false)
+        })
     }, [])
+
+  const checkForError = (response) => {
+    if(!response.ok) {
+      setLoading(false);
+      setError(true);
+    } else {
+      return response.json()
+    }
+  }
 
   const setState = (data) => {
     setAreaBirds(data);
@@ -32,8 +46,9 @@ const TopList = () => {
   return (
     <section className='topList'>
       <Header />
-      {loading && <Loading />}
-      {!loading &&
+      {error && <Redirect to='/error' />}
+      {loading && !error && <Loading />}
+      {!loading && !error &&
         <article>
           <h2>Birds in your Area</h2>
           <table>

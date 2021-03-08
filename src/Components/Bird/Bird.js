@@ -9,7 +9,7 @@ const Bird = ( { bird } ) => {
 
   const handleChange = (event) => {
     checkBox();
-    const findBird =
+    const findBird = 'lol';
     console.log(event.target.name)
   }
 

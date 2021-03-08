@@ -1,5 +1,4 @@
 import React from 'react';
-import { Route, Link, Redirect} from 'react-router-dom';
 import './App.css';
 import Header from '../Header/Header'
 import Highlight from '../Highlight/Highlight';

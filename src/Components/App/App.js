@@ -11,7 +11,6 @@ import Loading from '../Loading/Loading';
 
 const App = () => {
 
-  const [areaBirds, setAreaBirds] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
@@ -38,7 +37,6 @@ const App = () => {
 
   const setState = (data) => {
     localStorage.setItem('topBirds', JSON.stringify(data))
-    setAreaBirds(data);
     setLoading(false);
    }
 

@@ -3,19 +3,8 @@ import { Link } from 'react-router-dom';
 import './Bird.css';
 import arrow from '../../Assets/go-to.png';
 
-const Bird = ( { bird } ) => {
+const Bird = ( { bird, checkBox, updateList } ) => {
   const {speciesCode, comName} = bird
-  let checked;
-
-  const handleChange = (event) => {
-    checkBox();
-    const findBird = 'lol';
-    console.log(event.target.name)
-  }
-
-  const checkBox = () => {
-    checked = checked ? false : true
-  }
 
   return (
     <tr>
@@ -23,8 +12,8 @@ const Bird = ( { bird } ) => {
         <input
           type='checkbox'
           name={speciesCode}
-          checked={checked}
-          onClick={handleChange}
+          defaultChecked={checkBox}
+          onChange={updateList}
         />
         <label htmlFor={speciesCode}>{comName}</label>
         <Link to={

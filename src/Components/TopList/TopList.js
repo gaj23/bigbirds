@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
 import './TopList.css';
-import apiCalls from '../../apiCalls';
 import Nav from '../Nav/Nav';
 import Header from '../Header/Header';
 import Bird from '../Bird/Bird';
@@ -11,11 +10,22 @@ const TopList = () => {
   const topBirds = localStorage.getItem('topBirds')
   const areaBirds = JSON.parse(topBirds)
 
+  const updateList = (event) => {
+    checkBox();
+    console.log(event.target.name)
+  }
+
+  let checked;
+  const checkBox = () => {
+    checked = checked ? false : true
+  }
 
   const possibleBirds = areaBirds.map(bird => {
     return <Bird
         key={bird.speciesCode}
         bird={bird}
+        checkBox={checkBox}
+        updateList={updateList}
       />
   })
 

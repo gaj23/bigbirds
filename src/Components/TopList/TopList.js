@@ -60,8 +60,6 @@ const TopList = () => {
     let checked;
     if(sightings.find(myBird => bird.speciesCode === myBird.speciesCode)) {
       checked = true;
-    } else {
-      checked = false;
     }
     return <Bird
         key={bird.speciesCode}

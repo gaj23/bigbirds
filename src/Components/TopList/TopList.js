@@ -10,6 +10,19 @@ const TopList = () => {
   const topBirds = localStorage.getItem('topBirds')
   const areaBirds = JSON.parse(topBirds)
 
+  const checkList = () => {
+    const stringedSightings = localStorage.getItem('storedSightings')
+    let sightings = JSON.parse(stringedSightings);
+
+    // if areaBirds includes seenBirds, then checked = true
+
+    areaBirds.forEach(bird => {
+      sightings.find(seenBird => {
+
+      })
+    })
+  }
+
   const updateList = (event) => {
     if (event.target.checked){
       addToList(event)
@@ -21,8 +34,9 @@ const TopList = () => {
     const stringedSightings = localStorage.getItem('storedSightings')
     let sightings = JSON.parse(stringedSightings);
     const findBird = areaBirds.find(bird => bird.speciesCode === event.target.name);
+    const date = new Date()
     const addSighting = {
-      dateSeen: new Date(),
+      dateSeen: formatDate(date),
       speciesCode: findBird.speciesCode,
       comName: findBird.comName,
       sciName: findBird.sciName
@@ -34,15 +48,21 @@ const TopList = () => {
   const removeFromList = (event) => {
     const stringedSightings = localStorage.getItem('storedSightings')
     let sightings = JSON.parse(stringedSightings);
-    //refactor above into own helper function
+    //refactor above into own json helper function
     console.log('before', sightings)
     sightings = sightings.filter(bird => bird.speciesCode !== event.target.name)
     console.log('after', sightings)
     localStorage.setItem('storedSightings', JSON.stringify(sightings))
   }
 
+  const formatDate = (date) => {
+    const day = date.getDate();
+    const month = date.getMonth();
+    const year = date.getFullYear();
+    return `${year}-${month}-${day}`
+  }
+
   //date needs formatted
-  //need to remove a bird from localStorage, too
 
   //if inside of sightings, needs to already been set to true
 

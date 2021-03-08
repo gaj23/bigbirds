@@ -37,16 +37,39 @@ const App = () => {
   }
 
   const setState = (data) => {
-    localStorage.setItem('topBirds', JSON.stringify(data))
+    localStorage.setItem('topBirds', JSON.stringify(data));
     setLoading(false);
    }
+
+  const getRandomIndex = (array) => {
+   return Math.floor(Math.random() * array.length);
+  }
+
+  const chooseBird = () => {
+    const seenBirds = JSON.parse(localStorage.getItem('storedSightings'));
+    const areaBirds = JSON.parse(localStorage.getItem('topBirds'));
+    const allBirds = seenBirds.concat(areaBirds);
+    const speciesCodeBirds = allBirds.map(bird => bird.speciesCode);
+    const highlightBirds = speciesCodeBirds.reduce((acc, bird) => {
+      if(!acc.includes(bird)){
+        acc.push(bird)
+      }
+      return acc
+    }, [])
+    return highlightBirds[getRandomIndex(highlightBirds)]
+  }
+
+  const findBird = () => {
+    const areaBirds = JSON.parse(localStorage.getItem('topBirds'));
+    return areaBirds.find(bird => bird.speciesCode === chooseBird())
+  }
 
   return (
       <main className="App">
         <Header />
         {!error && loading && <Loading />}
         {error && !loading && <Redirect to='/error' />}
-        {!error && !loading && <Highlight />}
+        {!error && !loading && <Highlight bird={findBird()}/>}
         <Nav />
       </main>
   );

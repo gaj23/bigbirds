@@ -10,7 +10,6 @@ import Loading from '../Loading/Loading';
 
 
 const App = () => {
-
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 

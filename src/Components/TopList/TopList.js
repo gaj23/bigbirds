@@ -11,35 +11,45 @@ const TopList = () => {
   const areaBirds = JSON.parse(topBirds)
 
   const updateList = (event) => {
-    checkBox();
+    if (event.target.checked){
+      addToList(event)
+    } else if (!event.target.checked) {
+      removeFromList(event)
+    }
+  }
+  const addToList = (event) => {
     const stringedSightings = localStorage.getItem('storedSightings')
     let sightings = JSON.parse(stringedSightings);
-    const newSighting = areaBirds.find(bird => bird.speciesCode === event.target.name);
+    const findBird = areaBirds.find(bird => bird.speciesCode === event.target.name);
     const addSighting = {
       dateSeen: new Date(),
-      speciesCode: newSighting.speciesCode,
-      comName: newSighting.comName,
-      sciName: newSighting.sciName
+      speciesCode: findBird.speciesCode,
+      comName: findBird.comName,
+      sciName: findBird.sciName
     }
     sightings.push(addSighting)
     localStorage.setItem('storedSightings', JSON.stringify(sightings))
   }
 
+  const removeFromList = (event) => {
+    const stringedSightings = localStorage.getItem('storedSightings')
+    let sightings = JSON.parse(stringedSightings);
+    //refactor above into own helper function
+    console.log('before', sightings)
+    sightings = sightings.filter(bird => bird.speciesCode !== event.target.name)
+    console.log('after', sightings)
+    localStorage.setItem('storedSightings', JSON.stringify(sightings))
+  }
+
   //date needs formatted
-  //need to go through and set checked to true
   //need to remove a bird from localStorage, too
 
-
-  const checkBox = () => {
-    let checked;
-    checked = checked ? false : true
-  }
+  //if inside of sightings, needs to already been set to true
 
   const possibleBirds = areaBirds.map(bird => {
     return <Bird
         key={bird.speciesCode}
         bird={bird}
-        checkBox={checkBox}
         updateList={updateList}
       />
   })

@@ -12,6 +12,8 @@ import Loading from '../Loading/Loading';
 const App = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+  const seenBirds = JSON.parse(localStorage.getItem('storedSightings'));
+  const areaBirds = JSON.parse(localStorage.getItem('topBirds'));
 
   if(!localStorage.getItem('storedSightings')) {
     localStorage.setItem('storedSightings', JSON.stringify(sightings));
@@ -46,8 +48,6 @@ const App = () => {
   }
 
   const chooseBird = () => {
-    const seenBirds = JSON.parse(localStorage.getItem('storedSightings'));
-    const areaBirds = JSON.parse(localStorage.getItem('topBirds'));
     const allBirds = seenBirds.concat(areaBirds);
     const speciesCodeBirds = allBirds.map(bird => bird.speciesCode);
     const highlightBirds = speciesCodeBirds.reduce((acc, bird) => {
@@ -60,7 +60,6 @@ const App = () => {
   }
 
   const findBird = () => {
-    const areaBirds = JSON.parse(localStorage.getItem('topBirds'));
     return areaBirds.find(bird => bird.speciesCode === chooseBird())
   }
 

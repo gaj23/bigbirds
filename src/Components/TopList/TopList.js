@@ -30,17 +30,11 @@ const TopList = () => {
   //sightings should change with each click
   //if areaBird is in sightings, then checked is true
 
-  const updateList = (event) => {
-    if (event.target.checked){
-      checkList(event)
-    } else if (!event.target.checked) {
-      removeFromList(event)
-    }
-  }
-
   const checkList = (event) => {
     if(!sightings.find(bird=> bird.speciesCode === event.target.name)) {
       addToList(event)
+    } else {
+      removeFromList(event)
     }
   }
 
@@ -60,9 +54,9 @@ const TopList = () => {
   }
 
   const removeFromList = (event) => {
-    sightings = sightings.filter(bird => bird.speciesCode !== event.target.name)
+    const updatedList = sightings.filter(bird => bird.speciesCode !== event.target.name)
 
-    localStorage.setItem('storedSightings', JSON.stringify(sightings))
+    localStorage.setItem('storedSightings', JSON.stringify(updatedList))
   }
 
   const formatDate = (date) => {
@@ -76,7 +70,7 @@ const TopList = () => {
     return <Bird
         key={bird.speciesCode}
         bird={bird}
-        updateList={updateList}
+        checkList={checkList}
       />
   })
 

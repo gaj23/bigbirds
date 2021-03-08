@@ -12,9 +12,18 @@ const TopList = () => {
 
   const updateList = (event) => {
     checkBox();
-    console.log(event.target.name)
+    const stringedSightings = localStorage.getItem('storedSightings')
+    let sightings = JSON.parse(stringedSightings);
+    console.log('before', sightings)
+    const newSighting = areaBirds.find(bird => bird.speciesCode === event.target.name)
+    sightings.push(newSighting)
+    console.log('after', sightings.length)
+    console.log(stringedSightings)
   }
+  //set & update 'storedSightings'
+  //we have the speciesCode, need to find the matching speciseCode, push that object into stored birds & update that list
 
+//is this one needed?
   let checked;
   const checkBox = () => {
     checked = checked ? false : true

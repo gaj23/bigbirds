@@ -14,7 +14,7 @@ const App = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
-  localStorage.setItem('storedSightingings', JSON.stringify(sightings));
+  localStorage.setItem('storedSightings', JSON.stringify(sightings));
 
   useEffect(() => {
       apiCalls.getTopBirds()

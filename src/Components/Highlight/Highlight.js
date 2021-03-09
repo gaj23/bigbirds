@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './Highlight.css';
 import images from '../../data/imagesData';
 
@@ -10,7 +9,6 @@ const Highlight = () => {
 
   const birdID = Object.keys(images)
   const randomBird = birdID[getRandomIndex(birdID)]
-  //randomBird => speciesCode
 
   const birdImage = () => {
     return images[randomBird]
@@ -20,9 +18,7 @@ const Highlight = () => {
     <section className='highlight'>
       <h2>Guess this Bird!</h2>
         <article>
-
-            <img src={birdImage()} />
-
+          <img src={birdImage()} alt='guess this bird'/>
         </article>
     </section>
   )

@@ -2,13 +2,14 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import './Highlight.css';
 import images from '../../data/imagesData';
+import backup from '../../Assets/no-img.png';
 
 const Highlight = ({ bird }) => {
   const { speciesCode, comName, sciName } = bird
 
   const birdImage = () => {
     if (!images[speciesCode]) {
-      return 'https://www.flaticon.com/svg/vstatic/svg/92/92022.svg?token=exp=1615247580~hmac=52ec88984fb68b2de32a187efbf0ace6'
+      return images.backup
     } else {
       return images[speciesCode]
     }

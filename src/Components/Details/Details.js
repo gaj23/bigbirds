@@ -2,6 +2,7 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import './Details.css';
 import images from '../../data/imagesData';
+import backup from '../../Assets/no-img.png';
 import Nav from '../Nav/Nav';
 import Header from '../Header/Header';
 
@@ -11,7 +12,7 @@ const Details = () => {
 
   const birdImage = () => {
     if (images[speciesCode] === undefined) {
-      return 'https://www.flaticon.com/svg/vstatic/svg/92/92022.svg?token=exp=1615247580~hmac=52ec88984fb68b2de32a187efbf0ace6'
+      return backup
     } else {
       return images[speciesCode]
     }

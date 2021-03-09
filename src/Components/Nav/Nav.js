@@ -14,7 +14,6 @@ const Nav = () => {
       <Link to='/seen'>
         <button>Seen</button>
       </Link>
-      <button>About</button>
     </nav>
   )
 }

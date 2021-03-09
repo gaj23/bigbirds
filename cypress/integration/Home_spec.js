@@ -19,5 +19,14 @@ describe('Home', () => {
         .get('img').should('be.visible')
   })
 
-  //test for error here 
+  it('Should have an error message if birds can\'t be loaded', () => {
+    cy.fixture('birds.json')
+      .then(() => {
+        cy.intercept('https://api.ebird.org/v2/data/obs/US-CO/recent?maxResults=30&key=jcsp15jhp6hi', {
+          statusCode: 400
+        })
+      })
+    cy.visit(baseURL);
+    cy.get('section article').contains('Whoops!')
+  })
 })

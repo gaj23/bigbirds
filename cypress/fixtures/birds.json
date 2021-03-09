@@ -1,4 +1,4 @@
-{ birds: [
+{ "birds": [
     {
       "dateSeen": "2021-01-02",
       "speciesCode": "sheowl",

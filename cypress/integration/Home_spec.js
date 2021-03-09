@@ -13,12 +13,9 @@ describe('Home', () => {
     cy.get('main section').should('have.class', 'loading')
   })
 
-  it('Should have a bird of the day highlight', () => {
+  it('Should have a random bird to guess', () => {
     cy.get('main .highlight').should('be.visible')
       .get('article')
         .get('img').should('be.visible')
-        .get('h3').should('be.visible')
-        .get('h4').should('be.visible')
-        .get('a').should('be.visible')
   })
 })

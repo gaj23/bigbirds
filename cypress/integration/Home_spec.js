@@ -18,4 +18,6 @@ describe('Home', () => {
       .get('article')
         .get('img').should('be.visible')
   })
+
+  //test for error here 
 })

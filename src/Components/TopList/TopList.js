@@ -65,19 +65,19 @@ const TopList = () => {
   return (
     <section className='topList'>
       <Header />
-        <article>
-          <h2>Birds in your Area</h2>
-          <table>
-            <thead>
-              <tr>
-                  <th colSpan="2">Seen it? Check it off!</th>
-              </tr>
-            </thead>
-            <tbody>
-              {possibleBirds()}
-            </tbody>
-          </table>
-        </article>
+      <article>
+        <h2>Birds in your Area</h2>
+        <table>
+          <thead>
+            <tr>
+                <th colSpan="2">Seen it? Check it off!</th>
+            </tr>
+          </thead>
+          <tbody>
+            {possibleBirds()}
+          </tbody>
+        </table>
+      </article>
       <Nav />
     </section>
   )

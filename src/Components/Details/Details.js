@@ -2,9 +2,9 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import './Details.css';
 import images from '../../data/imagesData';
+import backup from '../../Assets/no-img.png';
 import Nav from '../Nav/Nav';
 import Header from '../Header/Header';
-
 
 const Details = () => {
   const location = useLocation();
@@ -12,7 +12,7 @@ const Details = () => {
 
   const birdImage = () => {
     if (images[speciesCode] === undefined) {
-      return 'https://lh3.googleusercontent.com/proxy/2Glg8bEJYDUFmlsYVPtSYSsemOIYKVw7MRlLdEH6ryZUSThHwLfW0PSRbsGVJ640j0xB2MREMrtA6LxHwHjtE8UTEBbhIJ4'
+      return backup
     } else {
       return images[speciesCode]
     }

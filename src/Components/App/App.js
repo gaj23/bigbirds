@@ -37,7 +37,7 @@ const App = () => {
   }
 
   const setState = (data) => {
-    localStorage.setItem('topBirds', JSON.stringify(data))
+    localStorage.setItem('topBirds', JSON.stringify(data));
     setLoading(false);
    }
 

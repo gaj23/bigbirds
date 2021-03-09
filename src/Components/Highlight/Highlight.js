@@ -1,35 +1,24 @@
 import React from 'react';
 import './Highlight.css';
-
+import images from '../../data/imagesData';
 
 const Highlight = () => {
-  const birdOfTheDay = {
-    speciesCode: 'brncre',
-    comName: 'Brown Creeper',
-    sciName: 'Certhia americana',
-    url: 'https://www.allaboutbirds.org/guide/assets/photo/68037181-1280px.jpg'
+  const getRandomIndex = (array) => {
+    return Math.floor(Math.random() * array.length);
   }
-  //compare sightings list with top 30 list & filter is !dateSeen
-  //randomize !seen birds
-  //will need to account to ! url (see details for logic)
-  //or completely refactor this -> get it working first and then refactor.
 
-  const moreInfo = () => {
-    let bird;
-    if(birdOfTheDay.comName.includes(' ')) {
-       bird = birdOfTheDay.comName.split(' ').join('_')
-    }
-    return `https://www.allaboutbirds.org/guide/${bird}/`
+  const birdID = Object.keys(images)
+  const randomBird = birdID[getRandomIndex(birdID)]
+
+  const birdImage = () => {
+    return images[randomBird]
   }
 
   return (
     <section className='highlight'>
-      <h2>Spot that Bird!</h2>
+      <h2>Guess this Bird!</h2>
         <article>
-          <img src={birdOfTheDay.url} alt={birdOfTheDay.comName}/>
-          <h3>{birdOfTheDay.comName}</h3>
-          <h4><em>{birdOfTheDay.sciName}</em></h4>
-          <a href={moreInfo()} target='_blank' rel='noreferrer'><h5>Learn more here!</h5></a>
+          <img src={birdImage()} alt='guess this bird'/>
         </article>
     </section>
   )

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
 import './Highlight.css';
 import images from '../../data/imagesData';
 import backup from '../../Assets/no-img.png';
@@ -9,7 +8,7 @@ const Highlight = ({ bird }) => {
 
   const birdImage = () => {
     if (!images[speciesCode]) {
-      return images.backup
+      return backup
     } else {
       return images[speciesCode]
     }

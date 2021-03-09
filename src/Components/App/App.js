@@ -60,7 +60,12 @@ const App = () => {
   }
 
   const findBird = () => {
-    return areaBirds.find(bird => bird.speciesCode === chooseBird())
+    const chosenBird = areaBirds.find(bird => bird.speciesCode === chooseBird())
+    if (!chosenBird) {
+      setError(true)
+    } else {
+      return chosenBird;
+    }
   }
 
   return (

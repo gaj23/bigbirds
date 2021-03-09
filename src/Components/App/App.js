@@ -48,15 +48,7 @@ const App = () => {
   }
 
   const chooseBird = () => {
-    const allBirds = seenBirds.concat(areaBirds);
-    const speciesCodeBirds = allBirds.map(bird => bird.speciesCode);
-    const highlightBirds = speciesCodeBirds.reduce((acc, bird) => {
-      if(!acc.includes(bird)){
-        acc.push(bird)
-      }
-      return acc
-    }, [])
-    return highlightBirds[getRandomIndex(highlightBirds)]
+    return areaBirds[getRandomIndex(areaBirds)
   }
 
   const findBird = () => {

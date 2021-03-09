@@ -2,8 +2,7 @@
 
 .highlight {
   position: relative;
-  top: 6em;
-  bottom: 10em;
+  top: 10em;
   height: 80%;
   z-index: 0;
   display: flex;

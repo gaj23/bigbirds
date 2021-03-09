@@ -5,7 +5,7 @@ import arrow from '../../Assets/go-to.png';
 
 const Sighting = ( { bird } ) => {
   const { speciesCode, comName, dateSeen } = bird
-  //need to edit date seen
+
   return (
     <tr>
       <td>
@@ -22,7 +22,5 @@ const Sighting = ( { bird } ) => {
     </tr>
   )
 }
-
-//add link here to go to details about a bird.
 
 export default Sighting;

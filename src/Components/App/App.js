@@ -12,8 +12,6 @@ import Loading from '../Loading/Loading';
 const App = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-  const seenBirds = JSON.parse(localStorage.getItem('storedSightings'));
-  const areaBirds = JSON.parse(localStorage.getItem('topBirds'));
 
   if(!localStorage.getItem('storedSightings')) {
     localStorage.setItem('storedSightings', JSON.stringify(sightings));
@@ -43,29 +41,12 @@ const App = () => {
     setLoading(false);
    }
 
-  const getRandomIndex = (array) => {
-   return Math.floor(Math.random() * array.length);
-  }
-
-  const chooseBird = () => {
-    return areaBirds[getRandomIndex(areaBirds)
-  }
-
-  const findBird = () => {
-    const chosenBird = areaBirds.find(bird => bird.speciesCode === chooseBird())
-    if (!chosenBird) {
-      setError(true)
-    } else {
-      return chosenBird;
-    }
-  }
-
   return (
       <main className="App">
         <Header />
         {!error && loading && <Loading />}
         {error && !loading && <Redirect to='/error' />}
-        {!error && !loading && <Highlight bird={findBird()}/>}
+        {!error && !loading && <Highlight />}
         <Nav />
       </main>
   );

@@ -5,7 +5,7 @@ import './Nav.css';
 const Nav = () => {
   return (
     <nav>
-      <Link to='/home'>
+      <Link to='/'>
         <button>Home</button>
       </Link>
       <Link to='/top_30'>

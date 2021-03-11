@@ -11,11 +11,11 @@ import Error from './Components/Error/Error';
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
-      <Route path='/' component={ App } />
-      <Route path='/top_30' component={ TopList } />
-      <Route path='/bird_details/:id' component={ Details }/>
-      <Route path='/seen' component= { PersonalList } />
-      <Route path='/error' component={ Error } />
+      <Route exact path='/' component={ App } />
+      <Route exact path='/top_30' component={ TopList } />
+      <Route exact path='/bird_details/:id' component={ Details }/>
+      <Route exact path='/seen' component= { PersonalList } />
+      <Route exact path='/error' component={ Error } />
     </Switch>
   </BrowserRouter>,
   document.getElementById('root')

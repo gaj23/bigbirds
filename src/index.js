@@ -11,7 +11,7 @@ import Error from './Components/Error/Error';
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
-      <Route path='/home' component={ App } />
+      <Route path='/' component={ App } />
       <Route path='/top_30' component={ TopList } />
       <Route path='/bird_details/:id' component={ Details }/>
       <Route path='/seen' component= { PersonalList } />

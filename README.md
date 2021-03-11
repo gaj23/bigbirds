@@ -24,7 +24,6 @@ Originally, this project was built for a project with Turing School of Software 
 
 To view please:
 - This app has yet to be deployed
-- please come back at a later date
 
 ### Categories:
 - [Home Page](#Home-Page)

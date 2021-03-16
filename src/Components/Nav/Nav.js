@@ -15,7 +15,7 @@ const Nav = () => {
         <button>Seen</button>
       </Link>
     </nav>
-  )
+  ) 
 }
 
 export default Nav;

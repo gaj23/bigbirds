@@ -7,8 +7,15 @@ const Highlight = () => {
     return Math.floor(Math.random() * array.length);
   }
 
+  //images = an object [speciesCode]: imgUrl
+
   const birdID = Object.keys(images)
   const randomBird = birdID[getRandomIndex(birdID)]
+  //randomBird = speciesCode
+
+  //look through localStorage for speciesCode
+  //and wrap img in Link to =/bird_details/${randomBird}
+
 
   const birdImage = () => {
     return images[randomBird]

@@ -3,12 +3,15 @@ import { useLocation } from 'react-router-dom';
 import './Details.css';
 import images from '../../data/imagesData';
 import backup from '../../Assets/no-img.png';
-import Nav from '../Nav/Nav';
-import Header from '../Header/Header';
 
 const Details = () => {
   const location = useLocation();
   const { speciesCode, comName, sciName } = location.state
+
+  //insetad of relying on location, I would have to find speciesCode in localStorage (array of objects)
+
+  //look through local storage for matching speciesCode (id)
+  //locally have data rather than passing down
 
   const birdImage = () => {
     if (images[speciesCode] === undefined) {
@@ -28,7 +31,6 @@ const Details = () => {
 
   return (
     <section className='bird-details'>
-      <Header />
       <h2>About the {comName}</h2>
       <article>
         <img src={birdImage()} alt={comName}/>
@@ -36,7 +38,6 @@ const Details = () => {
         <h4><em>{sciName}</em></h4>
         <a href={moreInfo()} target='_blank' rel='noreferrer'><h5>Learn more here!</h5></a>
       </article>
-      <Nav />
     </section>
   )
 }

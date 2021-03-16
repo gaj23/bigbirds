@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import './TopList.css';
-import Nav from '../Nav/Nav';
-import Header from '../Header/Header';
 import Bird from '../Bird/Bird';
 
 const TopList = () => {
   const areaBirds = JSON.parse(localStorage.getItem('topBirds'));
 
+//this API call
   const [sightings, setSightings] = useState(JSON.parse(localStorage.getItem('storedSightings')));
 
   const checkList = (event) => {
@@ -64,7 +63,6 @@ const TopList = () => {
 
   return (
     <section className='topList'>
-      <Header />
       <article>
         <h2>Birds in your Area</h2>
         <table>
@@ -78,7 +76,6 @@ const TopList = () => {
           </tbody>
         </table>
       </article>
-      <Nav />
     </section>
   )
 }

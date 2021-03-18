@@ -48,7 +48,30 @@ const images = {
   cedwax: 'https://www.allaboutbirds.org/guide/assets/photo/59874471-1280px.jpg',
   lesgol: 'https://www.allaboutbirds.org/guide/assets/photo/67272491-1280px.jpg',
   horgre: 'https://www.allaboutbirds.org/guide/assets/photo/65055691-1280px.jpg',
-  'mallar3': 'https://www.allaboutbirds.org/guide/assets/photo/60021841-1280px.jpg'
+  'mallar3': 'https://www.allaboutbirds.org/guide/assets/photo/60021841-1280px.jpg',
+  mouchi: 'https://www.allaboutbirds.org/guide/assets/photo/68054751-1280px.jpg',
+  comrav: 'https://www.allaboutbirds.org/guide/assets/photo/63739491-1280px.jpg',
+  'wooscj2': 'https://www.allaboutbirds.org/guide/assets/photo/70581631-1280px.jpg',
+  blujay: 'https://www.allaboutbirds.org/guide/assets/photo/59859171-1280px.jpg',
+  spotow: 'https://www.allaboutbirds.org/guide/assets/photo/64991441-1280px.jpg',
+  dowwoo: 'https://www.allaboutbirds.org/guide/assets/photo/60397941-1280px.jpg',
+  'bkbmag1': 'https://www.allaboutbirds.org/guide/assets/photo/70580981-1280px.jpg',
+  stejay: 'https://www.allaboutbirds.org/guide/assets/photo/70582751-1280px.jpg',
+  whbnut: 'https://www.allaboutbirds.org/guide/assets/photo/68039391-1280px.jpg',
+  lessca: 'https://www.allaboutbirds.org/guide/assets/photo/63896301-1280px.jpg',
+  haiwoo: 'https://www.allaboutbirds.org/guide/assets/photo/68929241-1280px.jpg',
+  pinsis: 'https://www.allaboutbirds.org/guide/assets/photo/67276581-1280px.jpg',
+  moublu: 'https://www.allaboutbirds.org/guide/assets/photo/67471171-1280px.jpg',
+  lbbgul: 'https://www.allaboutbirds.org/guide/assets/photo/169546311-1280px.jpg',
+  calgul: 'https://www.allaboutbirds.org/guide/assets/photo/71318281-1280px.jpg',
+  hergul: 'https://www.allaboutbirds.org/guide/assets/photo/71319301-1280px.jpg',
+  amtspa: 'https://www.allaboutbirds.org/guide/assets/photo/64971291-1280px.jpg',
+  'wesowl1': 'https://www.allaboutbirds.org/guide/assets/photo/66045411-1280px.jpg',
+  whwdov: 'https://www.allaboutbirds.org/guide/assets/photo/66037301-1280px.jpg',
+  sancra: 'https://www.allaboutbirds.org/guide/assets/photo/159829341-1280px.jpg',
+  snogoo: 'https://www.allaboutbirds.org/guide/assets/photo/59939451-1280px.jpg',
+  houspa: 'https://www.allaboutbirds.org/guide/assets/photo/63742431-1280px.jpg',
+  amegfi: 'https://www.allaboutbirds.org/guide/assets/photo/124706471-1280px.jpg'
 }
 
 export default images;

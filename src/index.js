@@ -2,13 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './index.css';
+
+// Components
 import App from './Components/App/App';
 import TopList from './Components/TopList/TopList';
 import Details from './Components/Details/Details';
 import PersonalList from './Components/PersonalList/PersonalList';
-import Error from './Components/Error/Error';
 import Header from './Components/Header/Header';
 import Nav from './Components/Nav/Nav';
+import Error from './Components/Error/Error';
 
 ReactDOM.render(
   <BrowserRouter>

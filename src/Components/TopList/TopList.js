@@ -3,9 +3,9 @@ import './TopList.css';
 import Bird from '../Bird/Bird';
 
 const TopList = () => {
+  
   const areaBirds = JSON.parse(localStorage.getItem('topBirds'));
 
-//this API call
   const [sightings, setSightings] = useState(JSON.parse(localStorage.getItem('storedSightings')));
 
   const checkList = (event) => {

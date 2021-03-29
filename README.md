@@ -1,5 +1,5 @@
 # 🪶 BigBirds 🪶
-__updated: 03/08/2020__
+__updated: 03/29/2020__
 
 ---
 #### Table of Contents
@@ -23,8 +23,8 @@ Originally, this project was built for a project with Turing School of Software 
 ## Features
 
 To view please:
-- This app has yet to be deployed
-- please come back at a later date
+- Click [here](https://bigbirds.vercel.app/)
+- Developers, please see [To Contribute](#To-Contribute)
 
 ### Categories:
 - [Home Page](#Home-Page)
@@ -103,11 +103,13 @@ Thanks to [allaboutbirds.org](allaboutbirds.org) for their photo credits.
 
 ## Future Iterations
 
-I would like to ensure a proper link is created for the "Guess this Bird". I feel as if it would improve user experience if they could click this bird and view the details.
+~~I would like to ensure a proper link is created for the "Guess this Bird". I feel as if it would improve user experience if they could click this bird and view the details.~~ 03/29/2021
 
 Additional look at SAD path testing and stubbing of the API calls should be applied.
 
 The biggest refactoring would be surrounding creating an additional backend for user data to be posted rather than relying on localStorage as I temporarily have.
+
+AuthO applied so people may create their own account!
 
 More specifics about future work or refactoring can be found in this projects [GH issues](https://github.com/gaj23/bigbirds/issues).
 
@@ -120,6 +122,7 @@ If you'd like to contribute to the code, please complete the following steps:
 - clone this repo locally: `git clone git@github.com:gaj23/bigbirds.git <renameHere>`
 - API documentation & endpoints are [here](https://documenter.getpostman.com/view/664302/S1ENwy59?version=latest#4e020bc2-fc67-4fb6-a926-570cedefcc34)
   - **You Will Need A Key**
+  - Please follow the steps outlined in the eBird API documentation for this
 - from there please create a new branch following this pattern: `git checkout -b initials/feature-fix/focus-of-branch`
 - cd into your local copy and run `npm install`
 - Use Cypress for testing

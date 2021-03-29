@@ -7,12 +7,7 @@ import backup from '../../Assets/no-img.png';
 const Details = () => {
   const location = useLocation();
   const { speciesCode, comName, sciName } = location.state
-
-  //insetad of relying on location, I would have to find speciesCode in localStorage (array of objects)
-
-  //look through local storage for matching speciesCode (id)
-  //locally have data rather than passing down
-
+  
   const birdImage = () => {
     if (images[speciesCode] === undefined) {
       return backup

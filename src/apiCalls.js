@@ -4,7 +4,8 @@ const apiCalls = {
   },
 
   getSingleBird: (code) => {
-    return fetch(`https://api.ebird.org/v2/data/obs/US/recent/${code}`)
+    return fetch(`https://api.ebird.org/v2/data/obs/US/recent/${code}?key=jcsp15jhp6hi`)
+      .then(response => response.json())
   }
 }
 

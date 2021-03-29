@@ -6,23 +6,23 @@ import images from '../../data/imagesData';
 import Loading from '../Loading/Loading';
 
 const Highlight = () => {
-  const areaBirds = JSON.parse(localStorage.getItem('topBirds'));
-  const sightings = JSON.parse(localStorage.getItem('storedSightings'));
-
-
   const [bird, setBird] = useState(null);
   const [highlightImg, setHighlightImg] = useState('')
 
-  const getRandomIndex = (array) => {
-    return Math.floor(Math.random() * array.length);
-  }
-  const birdID = Object.keys(images)
-  const randomBird = birdID[getRandomIndex(birdID)]
-  const birdImage = () => {
-    return images[randomBird]
-  }
 
   useEffect(() => {
+    const areaBirds = JSON.parse(localStorage.getItem('topBirds'));
+    const sightings = JSON.parse(localStorage.getItem('storedSightings'));
+
+    const getRandomIndex = (array) => {
+      return Math.floor(Math.random() * array.length);
+    }
+    const birdID = Object.keys(images)
+    const randomBird = birdID[getRandomIndex(birdID)]
+    const birdImage = () => {
+      return images[randomBird]
+    }
+
     const findBird = () => {
       if (areaBirds.find(bird => bird.speciesCode === bird)) {
          setBird(areaBirds.find(bird => bird.speciesCode === randomBird));

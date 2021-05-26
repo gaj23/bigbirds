@@ -2,23 +2,22 @@
 
 .highlight {
   position: relative;
-  top: 10em;
-  height: 80%;
-  z-index: 0;
+  top: 6em;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 95%;
-  color: #162719;
+  width: 95vw;
+  height: 65vh;
+  z-index: 0;
   overflow: scroll;
+  color: #162719;
 }
 
 .highlight h2 {
   font-weight: 300;
-
 }
 
-.highlight article {
+.highlight a {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,9 +27,15 @@
   width: 95%;
   border: 3px solid #E07A5F;
   border-radius: 3em;
-  margin-bottom: .5em;
+  margin: 0 0 .5em 0;
 }
 
 .highlight h3, .highlight h4, .highlight h5 {
   margin: .3em;
+}
+
+@media only screen and (min-width: 500px)  {
+  .highlight a {
+    width: 30em;
+  }
 }

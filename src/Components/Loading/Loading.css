@@ -2,16 +2,14 @@
 
 .loading {
   position: relative;
-  top: 10em;
-  bottom: 10em;
-  height: 80%;
+  top: 6em;
+  height: 70vw;
+  width: 95%;
   z-index: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 95%;
   color: #162719;
-  overflow: scroll;
 }
 
 .loading h3 {
@@ -30,4 +28,10 @@
   border: 3px solid #E07A5F;
   border-radius: 3em;
   margin-bottom: .5em;
+}
+
+@media only screen and (min-width: 500px)  {
+  .loading img {
+    width: 35em;
+  }
 }

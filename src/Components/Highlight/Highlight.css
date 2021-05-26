@@ -7,7 +7,10 @@
   flex-direction: column;
   align-items: center;
   width: 95%;
+  heigth: 80%;
+  z-index: 0;
   color: #162719;
+  overflow: scroll;
 }
 
 .highlight h2 {

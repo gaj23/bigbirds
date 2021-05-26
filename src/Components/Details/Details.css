@@ -2,15 +2,13 @@
 
 .bird-details {
   position: relative;
-  top: 8em;
+  top: 6em;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 95%;
-  height: 80%;
+  height: inherit;
   z-index: 0;
-  overflow: scroll;
   color: #162719;
+  margin: .5em;
 }
 
 .bird-details h2 {
@@ -35,7 +33,7 @@
 }
 
 @media only screen and (min-width: 500px)  {
-  .highlight article {
+  .bird-details img {
     width: 35em;
   }
 }

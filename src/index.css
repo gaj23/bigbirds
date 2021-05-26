@@ -8,8 +8,3 @@ body {
   font-family: 'Nunito-sans', sans-serif;
   background: #F3F2F7;
 }
-
-section {
-  display: flex;
-  align-items: center;
-}

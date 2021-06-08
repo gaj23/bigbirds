@@ -44,7 +44,7 @@ const Highlight = () => {
       {!bird && <Loading />}
       {bird &&
         <>
-        <h2>Guess this Bird!</h2>
+          <h2>Guess this Bird!</h2>
           <article>
             <Link to={
               {

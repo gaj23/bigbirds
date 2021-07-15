@@ -1,5 +1,5 @@
 # 🪶 BigBirds 🪶
-__updated: 05/26/2020__
+__updated: 07/15/2021__
 
 ---
 #### Table of Contents
@@ -91,7 +91,7 @@ Testing the UX & UI of our app.
 ## Technologies
 - React
 - Router
-- Cypress for Testing
+- Cypress for E2E Testing
 - CSS
 - HTML
 - Webpack

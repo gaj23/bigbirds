@@ -6,8 +6,6 @@ import arrow from '../../Assets/go-to.png';
 
 const Bird = ( { bird, checkList, checked } ) => {
   const {speciesCode, comName} = bird
-  console.log({checkList})
-  console.log({checked})
 
   return (
     <tr>
@@ -39,7 +37,7 @@ Bird.propTypes = {
     speciesCode: PropTypes.string.isRequired,
     comName: PropTypes.string.isRequired
   }),
-  checkList: PropTypes.array.isRequired,
-  checked: PropTypes.oneOf([true, null]).isRequired
+  checkList: PropTypes.func.isRequired,
+  checked: PropTypes.bool.isRequired
 
 }

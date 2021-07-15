@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import './Sighting.css';
 import arrow from '../../Assets/go-to.png';
 
@@ -24,3 +25,11 @@ const Sighting = ( { bird } ) => {
 }
 
 export default Sighting;
+
+Sighting.propTypes = {
+  bird: PropTypes.shape({
+    speciesCode: PropTypes.string.isRequired,
+    comName: PropTypes.string.isRequired,
+    dateSeen: PropTypes.string.isRequired
+  })
+}

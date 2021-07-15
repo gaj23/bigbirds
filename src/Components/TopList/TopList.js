@@ -3,7 +3,7 @@ import './TopList.css';
 import Bird from '../Bird/Bird';
 
 const TopList = () => {
-  
+
   const areaBirds = JSON.parse(localStorage.getItem('topBirds'));
 
   const [sightings, setSightings] = useState(JSON.parse(localStorage.getItem('storedSightings')));
@@ -48,7 +48,7 @@ const TopList = () => {
 
   const possibleBirds = () => {
     return areaBirds.map(bird => {
-    let checked = null;
+    let checked = false;
     if(sightings.find(myBird => bird.speciesCode === myBird.speciesCode)) {
       checked = true;
     }

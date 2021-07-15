@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import './Bird.css';
 import arrow from '../../Assets/go-to.png';
 
@@ -30,3 +31,13 @@ const Bird = ( { bird, checkList, checked } ) => {
 }
 
 export default Bird;
+
+Bird.propTypes = {
+  bird: PropTypes.shape({
+    speciesCode: PropTypes.string.isRequired,
+    comName: PropTypes.string.isRequired
+  }),
+  checkList: PropTypes.func.isRequired,
+  checked: PropTypes.bool.isRequired
+
+}

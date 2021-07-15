@@ -43,7 +43,7 @@ const Highlight = () => {
     <section className='highlight'>
       {!bird && <Loading />}
       {bird &&
-        <>
+        <React.Fragment>
           <h2>Guess this Bird!</h2>
           <article>
             <Link to={
@@ -55,7 +55,7 @@ const Highlight = () => {
               <img src={highlightImg} alt='guess this bird'/>
             </Link>
           </article>
-        </>
+        </React.Fragment>
       }
     </section>
   )
